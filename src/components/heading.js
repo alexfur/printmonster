@@ -1,13 +1,13 @@
 import React from 'react'
-import { Container, Image } from 'semantic-ui-react'
+import { Segment, Image } from 'semantic-ui-react'
 
 const heading = require('./../assets/header.png')
 
 const Heading = ({}) => (
   <div>
-    <Container>
+    <Segment basic>
       <Image centered={true} src={heading} />
-    </Container>
+    </Segment>
   </div>
 )
 

@@ -5,7 +5,7 @@ import Product from './product'
 function Products(props) {
   return (
     <div>
-      <Grid columns={3} padded>
+      <Grid columns={3} stackable={true} padded>
         {props.productImages.map(productImage => {
           return (
             <Grid.Column>
