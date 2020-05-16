@@ -1,12 +1,14 @@
 {
-  "name": "gatsby-starter-semantic-ui",
-  "description": "Gatsby 2 Semantic UI Starter",
+  "name": "printmonster",
+  "description": "Digital illustratins for Figma",
   "version": "1.0.0",
-  "author": "Richard Blechinger <me@blechi.at>",
+  "author": "Alex Furman",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "next",
     "gatsby-plugin-less": "^2.0.0-beta.5",
     "gatsby-plugin-react-helmet": "next",
+    "gatsby-source-shopify": "^3.2.3",
     "less": "^3.8.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
