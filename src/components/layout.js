@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { Container, Grid, Menu } from 'semantic-ui-react'
+import { Container, Grid } from 'semantic-ui-react'
 
 import Navbar from './navbar'
 
@@ -36,7 +36,7 @@ const Layout = ({ children, data }) => (
 
         <Container>
           <Grid relaxed stackable centered>
-            <Grid.Column mobile={16} tablet={18} computer={20}>
+            <Grid.Column mobile={16} tablet={16} computer={16}>
               {children}
             </Grid.Column>
           </Grid>
