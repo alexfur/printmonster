@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Product from './product'
 import JSONPretty from 'react-json-pretty'
 
-function Products(props) {
+function Products() {
   const data = useStaticQuery(graphql`
     {
       allShopifyProduct {
@@ -22,11 +22,6 @@ function Products(props) {
             title
           }
           availableForSale
-          images {
-            localFile {
-              url
-            }
-          }
           id
         }
       }
@@ -41,7 +36,10 @@ function Products(props) {
         {data.allShopifyProduct.nodes.map(product => {
           return (
             <Grid.Column>
-              <Product productImage={product.images[0].localFile.url} />
+              <Product
+                image={product.variants[0].image.originalSrc}
+                price={product.variants[0].priceV2.amount}
+              />
             </Grid.Column>
           )
         })}
