@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState, useContext, useEffect, useCallback } from 'react'
 import { Container, Image } from 'semantic-ui-react'
 
-const Product = ({ image, price }) => (
-  <div>
-    <Container>
-      <Image centered={true} src={image} />
-      <p>{price}</p>
-    </Container>
-  </div>
-)
+import StoreContext from './../context/StoreContext'
+
+const Product = ({ image, price }) => {
+  const {
+    addProductToCart,
+    store: { client, adding },
+  } = useContext(StoreContext)
+
+  // const handleAddToCart = () => {
+  //   addProductToCart(product)
+  // }
+
+  return (
+    <div>
+      <Container>
+        <Image centered={true} src={image} />
+        <p>{price}</p>
+      </Container>
+    </div>
+  )
+}
 
 export default Product
