@@ -8,14 +8,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-less',
     {
-      resolve: 'gatsby-source-shopify',
+      resolve: `gatsby-theme-shopify-manager`,
       options: {
         shopName: 'figmapatterns',
         accessToken: process.env.SHOPIFY_STOREFRONT_API_TOKEN,
-        apiVersion: '2020-01',
-        verbose: true,
-        paginationSize: 1,
-        includeCollections: ['shop', 'content'],
+        shouldIncludeSourcePlugin: true, // default
+        shouldWrapRootElementWithProvider: true, // default
       },
     },
   ],

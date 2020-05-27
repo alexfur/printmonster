@@ -1,23 +1,31 @@
-import React, { useState, useContext, useEffect, useCallback } from 'react'
-import { Container, Image } from 'semantic-ui-react'
+import React from 'react'
+import { Button, Container, Image } from 'semantic-ui-react'
+import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 
-import StoreContext from './../context/StoreContext'
+const Product = ({ image, price, productId }) => {
+  console.log(productId)
 
-const Product = ({ image, price }) => {
-  const {
-    addProductToCart,
-    store: { client, adding },
-  } = useContext(StoreContext)
+  const addItemToCart = useAddItemToCart()
 
-  // const handleAddToCart = () => {
-  //   addProductToCart(product)
-  // }
+  async function addToCart() {
+    const variantId = productId
+    const quantity = 1
+
+    try {
+      await addItemToCart(variantId, quantity)
+      alert('Successfully added that item to your cart!')
+    } catch {
+      alert('There was a problem adding that item to your cart.')
+    }
+  }
 
   return (
     <div>
       <Container>
         <Image centered={true} src={image} />
         <p>{price}</p>
+        <Button onClick={addToCart}>Add item to your cart</Button>
+        {productId}
       </Container>
     </div>
   )

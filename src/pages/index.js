@@ -3,10 +3,12 @@ import React from 'react'
 import Layout from '../components/layout'
 import Heading from '../components/heading'
 import Products from '../components/products'
+import Cart from '../components/cart'
 
 const IndexPage = () => (
   <Layout>
     <Heading />
+    <Cart />
     <Products />
   </Layout>
 )

@@ -20,15 +20,13 @@ function Products() {
               currencyCode
             }
             title
+            shopifyId
           }
           availableForSale
-          id
         }
       }
     }
   `)
-
-  console.log(JSON.stringify(data.allShopifyProduct.nodes))
 
   return (
     <div>
@@ -39,6 +37,7 @@ function Products() {
               <Product
                 image={product.variants[0].image.originalSrc}
                 price={product.variants[0].priceV2.amount}
+                productId={product.variants[0].shopifyId}
               />
             </Grid.Column>
           )
