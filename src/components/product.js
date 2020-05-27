@@ -25,7 +25,6 @@ const Product = ({ image, price, productId }) => {
         <Image centered={true} src={image} />
         <p>{price}</p>
         <Button onClick={addToCart}>Add item to your cart</Button>
-        {productId}
       </Container>
     </div>
   )
