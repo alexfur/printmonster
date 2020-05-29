@@ -5,6 +5,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Container, Grid } from 'semantic-ui-react'
 import 'semantic-ui-less/semantic.less'
 
+import './styles.css'
+
 import Navbar from './navbar'
 
 const Layout = ({ children, data }) => (

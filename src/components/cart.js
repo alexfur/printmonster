@@ -66,18 +66,7 @@ function Cart() {
     </Modal>
   )
 
-  return (
-    <div
-      style={{
-        top: 0,
-        position: 'sticky',
-        zIndex: 999,
-        float: 'right',
-      }}
-    >
-      {checkoutModal}
-    </div>
-  )
+  return <>{checkoutModal}</>
 }
 
 export default Cart
