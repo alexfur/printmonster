@@ -6,7 +6,7 @@ import {
   useCartCount,
 } from 'gatsby-theme-shopify-manager'
 
-import { Modal, Button, Header, Label, Image } from 'semantic-ui-react'
+import { Modal, Button, Header, Label, Image, Segment } from 'semantic-ui-react'
 
 function Cart() {
   const cartItems = useCartItems()
@@ -33,10 +33,18 @@ function Cart() {
             background: 'none',
           }}
         >
-          <Label circular={true} color="red">
-            {cartCount}
-          </Label>
-          <Image src={require('./../assets/cart.svg')} />
+          <div>
+            <Image src={require('./../assets/cart.svg')} />
+            <Label
+              color="red"
+              circular
+              style={{
+                transform: 'translate(15px, -30px)',
+              }}
+            >
+              {cartCount}
+            </Label>
+          </div>
         </Button>
       }
     >
