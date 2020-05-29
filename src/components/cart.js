@@ -28,7 +28,11 @@ function Cart() {
   const checkoutModal = (
     <Modal
       trigger={
-        <Button style={{ background: 'none' }}>
+        <Button
+          style={{
+            background: 'none',
+          }}
+        >
           <Label circular={true} color="red">
             {cartCount}
           </Label>
@@ -62,7 +66,18 @@ function Cart() {
     </Modal>
   )
 
-  return <>{checkoutModal}</>
+  return (
+    <div
+      style={{
+        top: 0,
+        position: 'sticky',
+        zIndex: 999,
+        float: 'right',
+      }}
+    >
+      {checkoutModal}
+    </div>
+  )
 }
 
 export default Cart

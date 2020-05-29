@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Grid } from 'semantic-ui-react'
+import 'semantic-ui-less/semantic.less'
 
 import Navbar from './navbar'
-
-import 'semantic-ui-less/semantic.less'
 
 const Layout = ({ children, data }) => (
   <StaticQuery
@@ -32,15 +31,13 @@ const Layout = ({ children, data }) => (
           ]}
         />
 
-        <Navbar siteTitle={data.site.siteMetadata.title} />
+        <Navbar />
 
-        <Container>
-          <Grid relaxed stackable centered>
-            <Grid.Column mobile={16} tablet={16} computer={16}>
-              {children}
-            </Grid.Column>
-          </Grid>
-        </Container>
+        <Grid centered stackable relaxed>
+          <Grid.Column mobile={16} tablet={16} computer={16}>
+            <Container>{children}</Container>
+          </Grid.Column>
+        </Grid>
       </>
     )}
   />
