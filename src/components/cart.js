@@ -31,6 +31,7 @@ function Cart() {
       <Modal.Content>
         <Modal.Description>
           <Header>There are currently {cartCount} items in your cart.</Header>
+          {checkoutButton}
           <ul>
             {cartItems.map(product => {
               return (
@@ -52,13 +53,7 @@ function Cart() {
     </Modal>
   )
 
-  return (
-    <>
-      {checkoutUrl}
-      {checkoutButton}
-      {checkoutModal}
-    </>
-  )
+  return <>{checkoutModal}</>
 }
 
 export default Cart

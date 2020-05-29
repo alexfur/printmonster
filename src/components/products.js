@@ -42,10 +42,6 @@ function Products() {
             </Grid.Column>
           )
         })}
-
-        <div>
-          <JSONPretty id="json-pretty" data={data.allShopifyProduct.nodes} />
-        </div>
       </Grid>
     </div>
   )

@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Image } from 'semantic-ui-react'
-import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
+import { useAddItemToCart, useCartItems } from 'gatsby-theme-shopify-manager'
 
 const Product = ({ image, price, productId }) => {
-  console.log(productId)
-
   const addItemToCart = useAddItemToCart()
+  const cartItems = useCartItems()
 
   async function addToCart() {
     const variantId = productId
     const quantity = 1
+    let alreadyInCart = false
 
-    try {
-      await addItemToCart(variantId, quantity)
-      alert('Successfully added that item to your cart!')
-    } catch {
-      alert('There was a problem adding that item to your cart.')
+    cartItems.forEach(product => {
+      if (product.variant.id === variantId) {
+        alreadyInCart = true
+      }
+    })
+
+    if (!alreadyInCart) {
+      try {
+        await addItemToCart(variantId, quantity)
+        alert('Successfully added that item to your cart!')
+      } catch {
+        alert('There was a problem adding that item to your cart.')
+      }
+    } else {
+      alert('Product already in cart!')
     }
   }
 
