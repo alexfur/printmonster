@@ -1,12 +1,12 @@
 import React from 'react'
 import {
-  useCartCount,
   useCheckoutUrl,
   useCartItems,
   useRemoveItemFromCart,
+  useCartCount,
 } from 'gatsby-theme-shopify-manager'
 
-import { Modal, Button, Header } from 'semantic-ui-react'
+import { Modal, Button, Header, Label, Image } from 'semantic-ui-react'
 
 function Cart() {
   const cartItems = useCartItems()
@@ -26,7 +26,16 @@ function Cart() {
     )
 
   const checkoutModal = (
-    <Modal trigger={<Button>Cart</Button>}>
+    <Modal
+      trigger={
+        <Button style={{ background: 'none' }}>
+          <Label circular={true} color="red">
+            {cartCount}
+          </Label>
+          <Image src={require('./../assets/cart.svg')} />
+        </Button>
+      }
+    >
       <Modal.Header>Your cart</Modal.Header>
       <Modal.Content>
         <Modal.Description>

@@ -7,8 +7,8 @@ import Cart from '../components/cart'
 
 const IndexPage = () => (
   <Layout>
-    <Heading />
     <Cart />
+    <Heading />
     <Products />
   </Layout>
 )

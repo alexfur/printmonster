@@ -7,7 +7,7 @@ const Navbar = ({ siteTitle }) => (
     <Container>
       <h1 style={{ padding: '1rem 0', marginBottom: '2rem' }}>
         <Link style={{ color: 'black' }} to="/">
-          {siteTitle}
+          {/*{siteTitle}*/}
         </Link>
       </h1>
     </Container>
