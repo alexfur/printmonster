@@ -105,7 +105,9 @@ function Cart() {
                 <Divider />
                 <Item.Content>
                   <Segment basic>
-                    <span style={{ float: 'left' }}>{product.title}</span>
+                    <span style={{ float: 'left', fontWeight: 600 }}>
+                      {product.title}
+                    </span>
                     <span style={{ float: 'right' }}>
                       ${Math.round(product.variant.priceV2.amount)}
                     </span>
