@@ -19,7 +19,6 @@ function Products() {
               amount
               currencyCode
             }
-            title
             shopifyId
           }
           availableForSale
@@ -35,6 +34,7 @@ function Products() {
           return (
             <Grid.Column>
               <Product
+                title={product.title}
                 image={product.variants[0].image.originalSrc}
                 price={product.variants[0].priceV2.amount}
                 productId={product.variants[0].shopifyId}
