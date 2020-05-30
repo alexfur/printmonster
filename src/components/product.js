@@ -30,7 +30,7 @@ const Product = ({ image, price, productId }) => {
   }
 
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       <Container>
         <Image centered={true} src={image} />
         <p>{price}</p>

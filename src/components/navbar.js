@@ -1,16 +1,17 @@
 import React from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
-import styled from 'styled-components'
 
 import Cart from './cart'
 
 const Navbar = ({}) => (
   <Segment basic style={{ padding: '3rem' }}>
     <Menu
-      id="cartMenuButton"
+      id="cartMenu"
       borderless="true"
       fixed="top"
-      style={{ background: 'none' }}
+      style={{
+        background: 'none',
+      }}
     >
       <Menu.Item position="right">
         <Cart />

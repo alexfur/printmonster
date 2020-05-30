@@ -7,19 +7,13 @@ import {
   useCartCount,
 } from 'gatsby-theme-shopify-manager'
 
-import styled from 'styled-components'
-
 import {
-  Modal,
   Button,
-  Header,
   Label,
   Image,
   Menu,
   Segment,
-  Container,
   Item,
-  Grid,
   Icon,
   Divider,
 } from 'semantic-ui-react'
@@ -45,7 +39,7 @@ function Cart() {
             rel="noopener noreferrer"
             style={{ textDecoration: 'none', color: 'white' }}
           >
-            Continue to checkout
+            Checkout
           </a>
         </Button>
       </p>
@@ -76,7 +70,11 @@ function Cart() {
       </Button>
 
       {openCartMenu ? (
-        <Menu size="large" vertical>
+        <Menu
+          size="large"
+          vertical
+          style={{ marginTop: '-30px', overflow: 'auto', maxHeight: '500px' }}
+        >
           <div>
             <Icon
               onClick={() => {
@@ -88,7 +86,14 @@ function Cart() {
             />
           </div>
           <Menu.Header>
-            <Segment basic style={{ textAlign: 'center' }}>
+            <Segment
+              basic
+              style={{
+                textAlign: 'center',
+                marginBottom: '-20px',
+                marginTop: '-20px',
+              }}
+            >
               <span>
                 <h2>Your Cart</h2>
               </span>
@@ -147,53 +152,6 @@ function Cart() {
         ''
       )}
     </div>
-
-    // <Modal
-    //   trigger={
-    //     <Button
-    //       style={{
-    //         background: 'none',
-    //       }}
-    //     >
-    //       <div>
-    //         <Image src={require('./../assets/cart.svg')} />
-    //         <Label
-    //           color="red"
-    //           circular
-    //           style={{
-    //             transform: 'translate(15px, -30px)',
-    //           }}
-    //         >
-    //           {cartCount}
-    //         </Label>
-    //       </div>
-    //     </Button>
-    //   }
-    // >
-    //   <Modal.Header>Your cart</Modal.Header>
-    //   <Modal.Content>
-    //     <Modal.Description>
-    //       <Header>There are currently {cartCount} items in your cart.</Header>
-    //       {checkoutButton}
-    //       <ul>
-    //         {cartItems.map(product => {
-    //           return (
-    //             <>
-    //               <li key={product.title}>{product.title}</li>
-    //               <Button
-    //                 onClick={() => {
-    //                   removeItemFromCart(product.variant.id)
-    //                 }}
-    //               >
-    //                 Remove item
-    //               </Button>
-    //             </>
-    //           )
-    //         })}
-    //       </ul>
-    //     </Modal.Description>
-    //   </Modal.Content>
-    // </Modal>
   )
 
   return <>{checkoutModal}</>
