@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { Image, Modal, Header, Segment, Label } from 'semantic-ui-react'
-import { useAddItemToCart, useCartItems } from 'gatsby-theme-shopify-manager'
+import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
   const addItemToCart = useAddItemToCart()
-  const cartItems = useCartItems()
   const [isHovering, hoverProps] = useHover({ mouseLeaveDelayMS: 600 })
   const [openProductModal, setOpenProductModal] = useState(false)
 
@@ -66,23 +65,12 @@ const Product = ({ title, image, price, productId }) => {
   async function addToCart() {
     const variantId = productId
     const quantity = 1
-    let alreadyInCart = false
 
-    cartItems.forEach(product => {
-      if (product.variant.id === variantId) {
-        alreadyInCart = true
-      }
-    })
-
-    if (!alreadyInCart) {
-      try {
-        await addItemToCart(variantId, quantity)
-        alert('Successfully added that item to your cart!')
-      } catch {
-        alert('There was a problem adding that item to your cart.')
-      }
-    } else {
-      alert('Product already in cart!')
+    try {
+      await addItemToCart(variantId, quantity)
+      alert('Successfully added that item to your cart!')
+    } catch {
+      alert('There was a problem adding that item to your cart.')
     }
   }
 

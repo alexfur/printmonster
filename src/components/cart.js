@@ -5,6 +5,7 @@ import {
   useCartItems,
   useRemoveItemFromCart,
   useCartCount,
+  useUpdateItemQuantity,
 } from 'gatsby-theme-shopify-manager'
 
 import {
@@ -26,6 +27,25 @@ function Cart() {
   const checkoutUrl = useCheckoutUrl()
 
   const [openCartMenu, setOpenCartMenu] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+  const [item] = useCartItems()
+  const updateItemQuantity = useUpdateItemQuantity()
+
+  const updateQuantityRemoveOneItem = async item => {
+    if (item == null) {
+      return
+    }
+
+    const variantId = item.variant.id
+    const newQuantity = item.quantity - 1
+
+    try {
+      await updateItemQuantity(variantId, newQuantity)
+      alert('Successfully updated the item quantity!')
+    } catch {
+      alert("There was a problem updating that item's quantity.")
+    }
+  }
 
   const checkoutButton =
     checkoutUrl === null ? (
@@ -98,6 +118,7 @@ function Cart() {
               </span>
             </Segment>
           </Menu.Header>
+          {console.log(JSON.stringify(cartItems))}
           {cartItems.map(product => {
             return (
               <Item>
@@ -105,10 +126,13 @@ function Cart() {
                 <Item.Content>
                   <Segment basic>
                     <span style={{ float: 'left', fontWeight: 600 }}>
-                      {product.title}
+                      {product.title} (x{product.quantity})
                     </span>
                     <span style={{ float: 'right' }}>
-                      ${Math.round(product.variant.priceV2.amount)}
+                      $
+                      {Math.round(
+                        product.quantity * product.variant.priceV2.amount
+                      )}
                     </span>
                     <br />
                     <br />
@@ -123,7 +147,7 @@ function Cart() {
                           color: 'grey',
                         }}
                         onClick={() => {
-                          removeItemFromCart(product.variant.id)
+                          updateQuantityRemoveOneItem(product)
                         }}
                       >
                         Remove

@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Alex Furman",
   "dependencies": {
-    "@use-hooks/image-size": "^1.0.5",
     "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "gatsby": "next",
