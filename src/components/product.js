@@ -8,7 +8,7 @@ const Product = ({ title, image, price, productId }) => {
   const [isHovering, hoverProps] = useHover({ mouseLeaveDelayMS: 600 })
   const [openProductModal, setOpenProductModal] = useState(false)
 
-  const grab = require('./../assets/grab.svg')
+  const grab = require('./../assets/grab.png')
 
   const productModal = (
     <Modal
@@ -107,22 +107,44 @@ const Product = ({ title, image, price, productId }) => {
         </div>
 
         <div>
-          <Image
-            centered
-            style={{
-              visibility: isHovering ? 'visible' : 'hidden',
-              cursor: 'pointer',
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              marginRight: '-50%',
-              transform: 'translate(-50%, -50%)',
-            }}
-            src={grab}
-            onClick={() => {
-              setOpenProductModal(true)
-            }}
-          />
+          {isHovering ? (
+            <Image
+              {...hoverProps}
+              centered
+              style={{
+                cursor: 'pointer',
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                marginRight: '-50%',
+                transform: 'translate(-50%, -50%)',
+              }}
+              src={grab}
+              onClick={() => {
+                setOpenProductModal(true)
+              }}
+            />
+          ) : (
+            ''
+          )}
+
+          {/*  <Image*/}
+          {/*    {...hoverProps}*/}
+          {/*    centered*/}
+          {/*    style={{*/}
+          {/*      visibility: isHovering ? 'visible' : 'hidden',*/}
+          {/*      cursor: 'pointer',*/}
+          {/*      position: 'absolute',*/}
+          {/*      top: '50%',*/}
+          {/*      left: '50%',*/}
+          {/*      marginRight: '-50%',*/}
+          {/*      transform: 'translate(-50%, -50%)',*/}
+          {/*    }}*/}
+          {/*    src={grab}*/}
+          {/*    onClick={() => {*/}
+          {/*      setOpenProductModal(true)*/}
+          {/*    }}*/}
+          {/*  />*/}
         </div>
       </div>
 
