@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
-import {
-  Button,
-  Container,
-  Image,
-  Modal,
-  Header,
-  Segment,
-  Label,
-} from 'semantic-ui-react'
+import { Image, Modal, Header, Segment, Label } from 'semantic-ui-react'
 import { useAddItemToCart, useCartItems } from 'gatsby-theme-shopify-manager'
+import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
   const addItemToCart = useAddItemToCart()
   const cartItems = useCartItems()
-
+  const [isHovering, hoverProps] = useHover({ mouseLeaveDelayMS: 600 })
   const [openProductModal, setOpenProductModal] = useState(false)
+
+  const grab = require('./../assets/grab.svg')
 
   const productModal = (
     <Modal
@@ -92,33 +87,57 @@ const Product = ({ title, image, price, productId }) => {
   }
 
   return (
-    <div style={{ position: 'relative' }}>
-      <Segment basic>
-        <div
-          style={{
-            height: '2rem',
-            backgroundColor: 'white',
-            border: '2px solid black',
-            borderBottom: 0,
-          }}
-        >
-          <Header as="h3" style={{ padding: '0.3rem' }}>
-            {title}
-          </Header>
+    <div>
+      <div
+        style={{
+          height: '2rem',
+          backgroundColor: 'white',
+          border: '2px solid black',
+          borderBottom: 0,
+        }}
+      >
+        <Header as="h3" style={{ padding: '0.3rem' }}>
+          {title}
+        </Header>
+      </div>
+
+      <div>
+        <div>
+          <Image
+            {...hoverProps}
+            style={{
+              backgroundColor: 'white',
+              border: '2px solid black',
+              cursor: 'pointer',
+            }}
+            onClick={() => {
+              setOpenProductModal(true)
+            }}
+            centered
+            src={image}
+          />
         </div>
-        <Image
-          style={{
-            backgroundColor: 'white',
-            border: '2px solid black',
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            setOpenProductModal(true)
-          }}
-          centered={true}
-          src={image}
-        />
-      </Segment>
+
+        <div>
+          <Image
+            centered
+            style={{
+              visibility: isHovering ? 'visible' : 'hidden',
+              cursor: 'pointer',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              marginRight: '-50%',
+              transform: 'translate(-50%, -50%)',
+            }}
+            src={grab}
+            onClick={() => {
+              setOpenProductModal(true)
+            }}
+          />
+        </div>
+      </div>
+
       {productModal}
     </div>
   )

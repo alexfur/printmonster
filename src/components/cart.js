@@ -80,7 +80,6 @@ function Cart() {
               onClick={() => {
                 setOpenCartMenu(false)
               }}
-              corner="top right"
               name="close"
               style={{ padding: '2rem', cursor: 'pointer' }}
             />
