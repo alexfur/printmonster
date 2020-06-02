@@ -5,10 +5,13 @@ import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
   const addItemToCart = useAddItemToCart()
-  const [isHovering, hoverProps] = useHover({ mouseLeaveDelayMS: 600 })
+  const [isHovering, hoverProps] = useHover({
+    mouseEnterDelayMS: 0,
+    mouseLeaveDelayMS: 0,
+  })
   const [openProductModal, setOpenProductModal] = useState(false)
 
-  const grab = require('./../assets/grab.png')
+  const grab = require('./../assets/grab.svg')
 
   const productModal = (
     <Modal
@@ -90,62 +93,37 @@ const Product = ({ title, image, price, productId }) => {
       </div>
 
       <div>
-        <div>
-          <Image
-            {...hoverProps}
-            style={{
-              backgroundColor: 'white',
-              border: '2px solid black',
-              cursor: 'pointer',
-            }}
-            onClick={() => {
-              setOpenProductModal(true)
-            }}
-            centered
-            src={image}
-          />
-        </div>
+        <Image
+          {...hoverProps}
+          style={{
+            backgroundColor: 'white',
+            border: '2px solid black',
+            cursor: 'pointer',
+          }}
+          onClick={() => {
+            setOpenProductModal(true)
+          }}
+          centered
+          src={image}
+        />
 
-        <div>
-          {isHovering ? (
-            <Image
-              {...hoverProps}
-              centered
-              style={{
-                cursor: 'pointer',
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)',
-              }}
-              src={grab}
-              onClick={() => {
-                setOpenProductModal(true)
-              }}
-            />
-          ) : (
-            ''
-          )}
-
-          {/*  <Image*/}
-          {/*    {...hoverProps}*/}
-          {/*    centered*/}
-          {/*    style={{*/}
-          {/*      visibility: isHovering ? 'visible' : 'hidden',*/}
-          {/*      cursor: 'pointer',*/}
-          {/*      position: 'absolute',*/}
-          {/*      top: '50%',*/}
-          {/*      left: '50%',*/}
-          {/*      marginRight: '-50%',*/}
-          {/*      transform: 'translate(-50%, -50%)',*/}
-          {/*    }}*/}
-          {/*    src={grab}*/}
-          {/*    onClick={() => {*/}
-          {/*      setOpenProductModal(true)*/}
-          {/*    }}*/}
-          {/*  />*/}
-        </div>
+        <Image
+          {...hoverProps}
+          centered
+          style={{
+            visibility: isHovering ? 'visible' : 'hidden',
+            cursor: 'pointer',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+          src={grab}
+          onClick={() => {
+            setOpenProductModal(true)
+          }}
+        />
       </div>
 
       {productModal}
