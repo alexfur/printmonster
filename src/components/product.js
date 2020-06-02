@@ -23,18 +23,37 @@ const Product = ({ title, image, price, productId }) => {
       }}
     >
       <Modal.Content>
-        <Image
-          src={image}
-          centered
-          wrapped
-          size="large"
-          style={{ border: '2px solid black' }}
-          label={
-            <Label color="red" ribbon="right" size="big">
-              ${Math.round(price)}
-            </Label>
-          }
-        />
+        <div style={{ textAlign: 'center' }}>
+          <Image
+            src={image}
+            centered
+            wrapped
+            size="large"
+            style={{
+              border: '2px solid black',
+            }}
+            label={
+              <div>
+                <Label
+                  attached="bottom right"
+                  style={{
+                    transform: 'translate(0, 40%)',
+                    borderRadius: '50%',
+                    border: '2px solid black',
+                    backgroundColor: 'red',
+                    color: 'white',
+                    height: '3.5rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  <h1 id="strokedP">${Math.round(price)}</h1>
+                </Label>
+              </div>
+            }
+          />
+        </div>
+
         <Modal.Description>
           <Segment basic style={{ padding: '5rem' }}>
             <span style={{ float: 'left' }}>

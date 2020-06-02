@@ -118,10 +118,9 @@ function Cart() {
               </span>
             </Segment>
           </Menu.Header>
-          {console.log(JSON.stringify(cartItems))}
           {cartItems.map(product => {
             return (
-              <Item>
+              <Item key={product.id}>
                 <Divider />
                 <Item.Content>
                   <Segment basic>
