@@ -3,7 +3,6 @@ import {
   useCart,
   useCheckoutUrl,
   useCartItems,
-  useRemoveItemFromCart,
   useCartCount,
   useUpdateItemQuantity,
 } from 'gatsby-theme-shopify-manager'
@@ -22,13 +21,10 @@ import {
 function Cart() {
   const cart = useCart()
   const cartItems = useCartItems()
-  const removeItemFromCart = useRemoveItemFromCart()
   const cartCount = useCartCount()
   const checkoutUrl = useCheckoutUrl()
 
   const [openCartMenu, setOpenCartMenu] = useState(false)
-  const [quantity, setQuantity] = useState(1)
-  const [item] = useCartItems()
   const updateItemQuantity = useUpdateItemQuantity()
 
   const updateQuantityRemoveOneItem = async item => {
@@ -41,7 +37,6 @@ function Cart() {
 
     try {
       await updateItemQuantity(variantId, newQuantity)
-      alert('Successfully updated the item quantity!')
     } catch {
       alert("There was a problem updating that item's quantity.")
     }

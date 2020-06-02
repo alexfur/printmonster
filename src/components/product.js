@@ -7,20 +7,54 @@ import {
   Label,
   Grid,
   Icon,
-  Menu,
+  Button,
 } from 'semantic-ui-react'
-import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
+import {
+  useAddItemToCart,
+  useCartItems,
+  useUpdateItemQuantity,
+} from 'gatsby-theme-shopify-manager'
 import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
-  const addItemToCart = useAddItemToCart()
   const [isHovering, hoverProps] = useHover({
     mouseEnterDelayMS: 0,
     mouseLeaveDelayMS: 0,
   })
   const [openProductModal, setOpenProductModal] = useState(false)
+  const cartItems = useCartItems()
+  const [isAddingToCart, setIsAddingToCart] = useState(false)
+  const addItemToCart = useAddItemToCart()
+  const updateItemQuantity = useUpdateItemQuantity()
 
   const grab = require('./../assets/grab.svg')
+
+  const addToCart = async () => {
+    addProductToCart().then(() => {
+      setProductQuantityToOne()
+    })
+  }
+
+  const addProductToCart = async () => {
+    setIsAddingToCart(true)
+
+    try {
+      await addItemToCart(productId, 1)
+    } catch {
+      alert('ERROR')
+      setIsAddingToCart(false)
+    }
+  }
+
+  const setProductQuantityToOne = async () => {
+    try {
+      await updateItemQuantity(productId, 1)
+    } catch {
+      alert('ERROR')
+      setIsAddingToCart(false)
+    }
+    setIsAddingToCart(false)
+  }
 
   const productModal = (
     <Modal
@@ -89,15 +123,18 @@ const Product = ({ title, image, price, productId }) => {
                 </Header>
               </Grid.Column>
               <Grid.Column>
-                <Header
-                  as="h1"
-                  textAlign="center"
-                  onClick={addToCart}
-                  style={{ cursor: 'pointer' }}
-                  color="blue"
-                >
-                  Add to cart
-                </Header>
+                <div style={{ textAlign: 'center' }}>
+                  <Button
+                    textAlign="center"
+                    onClick={addToCart}
+                    style={{ cursor: 'pointer' }}
+                    color="blue"
+                    loading={isAddingToCart}
+                    disabled={isAddingToCart}
+                  >
+                    Add to cart
+                  </Button>
+                </div>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={2}>
@@ -119,18 +156,6 @@ const Product = ({ title, image, price, productId }) => {
     </Modal>
   )
 
-  async function addToCart() {
-    const variantId = productId
-    const quantity = 1
-
-    try {
-      await addItemToCart(variantId, quantity)
-      alert('Successfully added that item to your cart!')
-    } catch {
-      alert('There was a problem adding that item to your cart.')
-    }
-  }
-
   return (
     <div>
       <div
@@ -143,7 +168,8 @@ const Product = ({ title, image, price, productId }) => {
       >
         <Header as="h3" style={{ padding: '0.3rem' }}>
           {title}
-        </Header>
+        </Header>{' '}
+        <Icon name="car" />
       </div>
 
       <div>

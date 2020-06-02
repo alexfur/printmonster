@@ -2,7 +2,6 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Product from './product'
-import JSONPretty from 'react-json-pretty'
 
 function Products() {
   const data = useStaticQuery(graphql`
