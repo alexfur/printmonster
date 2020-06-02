@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
-import { Image, Modal, Header, Segment, Label } from 'semantic-ui-react'
+import {
+  Image,
+  Modal,
+  Header,
+  Segment,
+  Label,
+  Grid,
+  Icon,
+  Menu,
+} from 'semantic-ui-react'
 import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 import useHover from 'react-use-hover'
 
@@ -24,6 +33,20 @@ const Product = ({ title, image, price, productId }) => {
     >
       <Modal.Content>
         <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'right' }}>
+            <Icon
+              onClick={() => {
+                setOpenProductModal(false)
+              }}
+              name="close"
+              size="large"
+              style={{
+                paddingBottom: '2rem',
+                cursor: 'pointer',
+                textAlign: 'center',
+              }}
+            />
+          </div>
           <Image
             src={image}
             centered
@@ -55,30 +78,42 @@ const Product = ({ title, image, price, productId }) => {
         </div>
 
         <Modal.Description>
-          <Segment basic style={{ padding: '5rem' }}>
-            <span style={{ float: 'left' }}>
-              <Header as="h1" textAlign="center">
-                {title}
-              </Header>
-              <p style={{ fontSize: '1.2rem' }}>
-                Includes <span style={{ fontWeight: 600 }}>FIG</span> and{' '}
-                <span style={{ fontWeight: 600 }}>SVG</span> copies.
-              </p>
-            </span>
-            <span style={{ float: 'right' }}>
-              <Header
-                as="h1"
-                textAlign="center"
-                onClick={addToCart}
-                style={{ cursor: 'pointer' }}
-              >
-                Add to cart
-              </Header>
-              <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
-                Size: 800KB
-              </p>
-            </span>
-          </Segment>
+          <Grid stackable>
+            <Grid.Row>
+              <Segment basic />
+            </Grid.Row>
+            <Grid.Row columns={2}>
+              <Grid.Column>
+                <Header as="h1" textAlign="center">
+                  {title}
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header
+                  as="h1"
+                  textAlign="center"
+                  onClick={addToCart}
+                  style={{ cursor: 'pointer' }}
+                  color="blue"
+                >
+                  Add to cart
+                </Header>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={2}>
+              <Grid.Column>
+                <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
+                  Includes <span style={{ fontWeight: 600 }}>FIG</span> and{' '}
+                  <span style={{ fontWeight: 600 }}>SVG</span> copies
+                </p>
+              </Grid.Column>
+              <Grid.Column>
+                <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
+                  Size: 800KB
+                </p>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Modal.Description>
       </Modal.Content>
     </Modal>
