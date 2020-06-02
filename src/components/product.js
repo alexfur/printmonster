@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   Image,
   Modal,
@@ -11,37 +11,47 @@ import {
 } from 'semantic-ui-react'
 import {
   useAddItemToCart,
-  useCartItems,
   useUpdateItemQuantity,
+  useCartItems,
 } from 'gatsby-theme-shopify-manager'
 import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
+  const grab = require('./../assets/grab.svg')
   const [isHovering, hoverProps] = useHover({
     mouseEnterDelayMS: 0,
     mouseLeaveDelayMS: 0,
   })
   const [openProductModal, setOpenProductModal] = useState(false)
-  const cartItems = useCartItems()
   const [isAddingToCart, setIsAddingToCart] = useState(false)
+  const [isAddedToCart, setIsAddedToCart] = useState(false)
   const addItemToCart = useAddItemToCart()
   const updateItemQuantity = useUpdateItemQuantity()
+  const cartItems = useCartItems()
 
-  const grab = require('./../assets/grab.svg')
+  useEffect(() => {
+    let added = false
+    cartItems.forEach(product => {
+      if (product.variant.id === productId) {
+        added = true
+      }
+    })
+    if (!added) setIsAddedToCart(false)
+  }, [cartItems])
 
   const addToCart = async () => {
     addProductToCart().then(() => {
-      setProductQuantityToOne()
+      setProductQuantityToOne().then(() => {
+        setIsAddedToCart(true)
+      })
     })
   }
 
   const addProductToCart = async () => {
     setIsAddingToCart(true)
-
     try {
       await addItemToCart(productId, 1)
     } catch {
-      alert('ERROR')
       setIsAddingToCart(false)
     }
   }
@@ -50,7 +60,6 @@ const Product = ({ title, image, price, productId }) => {
     try {
       await updateItemQuantity(productId, 1)
     } catch {
-      alert('ERROR')
       setIsAddingToCart(false)
     }
     setIsAddingToCart(false)
@@ -94,7 +103,7 @@ const Product = ({ title, image, price, productId }) => {
                 <Label
                   attached="bottom right"
                   style={{
-                    transform: 'translate(0, 40%)',
+                    transform: 'translate(0%, 40%)',
                     borderRadius: '50%',
                     border: '2px solid black',
                     backgroundColor: 'red',
@@ -128,11 +137,16 @@ const Product = ({ title, image, price, productId }) => {
                     textAlign="center"
                     onClick={addToCart}
                     style={{ cursor: 'pointer' }}
-                    color="blue"
+                    color={isAddedToCart ? 'gray' : 'twitter'}
+                    size="big"
                     loading={isAddingToCart}
-                    disabled={isAddingToCart}
+                    disabled={isAddedToCart}
                   >
-                    Add to cart
+                    {isAddedToCart ? (
+                      <Header as="h3" content={'Added!'} />
+                    ) : (
+                      'Add to cart'
+                    )}
                   </Button>
                 </div>
               </Grid.Column>

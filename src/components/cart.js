@@ -18,7 +18,7 @@ import {
   Divider,
 } from 'semantic-ui-react'
 
-function Cart() {
+function Cart({}) {
   const cart = useCart()
   const cartItems = useCartItems()
   const cartCount = useCartCount()
@@ -37,9 +37,7 @@ function Cart() {
 
     try {
       await updateItemQuantity(variantId, newQuantity)
-    } catch {
-      alert("There was a problem updating that item's quantity.")
-    }
+    } catch {}
   }
 
   const checkoutButton =
