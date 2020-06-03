@@ -30,12 +30,19 @@ const BuyAll = ({ data }) => {
 
   return (
     <>
-      <Segment basic>
+      <Segment basic style={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           onClick={() => {
             addAllToCart()
           }}
-          style={{ textAlign: 'center' }}
+          size="huge"
+          style={{
+            textAlign: 'center',
+            backgroundColor: '#FFE178',
+            fontWeight: '800',
+            color: 'black',
+            border: '2px solid black',
+          }}
         >
           GRAB ALL FOR $30!
         </Button>
