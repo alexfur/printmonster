@@ -1,7 +1,7 @@
 import React from 'react'
 import { Segment, Image } from 'semantic-ui-react'
 
-const heading = require('./../assets/heading2.png')
+const heading = require('./../assets/heading.png')
 
 const Heading = ({}) => (
   <Segment basic>

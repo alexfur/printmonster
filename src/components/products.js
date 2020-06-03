@@ -6,7 +6,7 @@ import Product from './product'
 function Products() {
   const data = useStaticQuery(graphql`
     {
-      allShopifyProduct {
+      allShopifyProduct(sort: { fields: [title], order: ASC }) {
         nodes {
           title
           variants {
