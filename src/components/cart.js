@@ -74,7 +74,7 @@ function Cart({}) {
             color="red"
             circular
             style={{
-              transform: 'translate(15px, -30px)',
+              transform: 'translate(15px, -15px)',
             }}
           >
             {cartCount}
