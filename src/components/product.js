@@ -29,6 +29,8 @@ const Product = ({ title, image, price, productId }) => {
   const updateItemQuantity = useUpdateItemQuantity()
   const cartItems = useCartItems()
 
+  // This block ensures this product's isAddedToCart state is consistent with side effects
+  // (for example if this product is removed from the cart).
   useEffect(() => {
     let added = false
     cartItems.forEach(product => {
@@ -137,7 +139,7 @@ const Product = ({ title, image, price, productId }) => {
                     textAlign="center"
                     onClick={addToCart}
                     style={{ cursor: 'pointer' }}
-                    color={isAddedToCart ? 'gray' : 'twitter'}
+                    color={isAddedToCart ? 'grey' : 'twitter'}
                     size="big"
                     loading={isAddingToCart}
                     disabled={isAddedToCart}
@@ -182,8 +184,7 @@ const Product = ({ title, image, price, productId }) => {
       >
         <Header as="h3" style={{ padding: '0.3rem' }}>
           {title}
-        </Header>{' '}
-        <Icon name="car" />
+        </Header>
       </div>
 
       <div>
@@ -199,6 +200,25 @@ const Product = ({ title, image, price, productId }) => {
           }}
           centered
           src={image}
+          label={
+            <div>
+              <Label
+                attached="bottom right"
+                style={{
+                  transform: 'translate(0%, 40%)',
+                  borderRadius: '50%',
+                  border: '2px solid black',
+                  backgroundColor: 'red',
+                  color: 'white',
+                  height: '3.5rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <h1 id="strokedP">${Math.round(price)}</h1>
+              </Label>
+            </div>
+          }
         />
 
         <Image
