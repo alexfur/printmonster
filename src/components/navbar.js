@@ -7,7 +7,7 @@ const Navbar = ({}) => (
   <Segment basic style={{ padding: '3rem' }}>
     <Menu
       id="cartMenu"
-      borderless="true"
+      borderless={true}
       fixed="top"
       style={{
         background: 'none',

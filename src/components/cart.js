@@ -5,6 +5,7 @@ import {
   useCartItems,
   useCartCount,
   useUpdateItemQuantity,
+  useRemoveItemsFromCart,
 } from 'gatsby-theme-shopify-manager'
 
 import {
@@ -21,11 +22,25 @@ import {
 function Cart({}) {
   const cart = useCart()
   const cartItems = useCartItems()
+  const removeItemsFromCart = useRemoveItemsFromCart()
   const cartCount = useCartCount()
   const checkoutUrl = useCheckoutUrl()
-
   const [openCartMenu, setOpenCartMenu] = useState(false)
   const updateItemQuantity = useUpdateItemQuantity()
+
+  const clearCart = async () => {
+    if (cartItems.length < 1) {
+      return
+    }
+
+    const itemIds = cartItems.map(item => {
+      return item.variant.id
+    })
+
+    try {
+      await removeItemsFromCart(itemIds)
+    } catch {}
+  }
 
   const updateQuantityRemoveOneItem = async item => {
     if (item == null) {
@@ -109,6 +124,15 @@ function Cart({}) {
               <div>
                 <h2>Your Cart</h2>
               </div>
+              <Segment basic>
+                <Button
+                  onClick={() => {
+                    clearCart()
+                  }}
+                >
+                  Clear cart
+                </Button>
+              </Segment>
             </Segment>
           </Menu.Header>
           {cartItems.map(product => {

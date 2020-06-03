@@ -18,7 +18,6 @@ import {
 import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
-  const grab = require('./../assets/grab.svg')
   const [isHovering, hoverProps] = useHover({
     mouseEnterDelayMS: 0,
     mouseLeaveDelayMS: 0,

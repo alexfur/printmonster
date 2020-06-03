@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Product from './product'
+import BuyAll from './buyall'
 
 function Products() {
   const data = useStaticQuery(graphql`
@@ -28,10 +29,11 @@ function Products() {
 
   return (
     <div>
+      <BuyAll data={data} />
       <Grid columns={3} stackable={true} padded>
         {data.allShopifyProduct.nodes.map(product => {
           return (
-            <Grid.Column>
+            <Grid.Column key={product.variants[0].shopifyId}>
               <Product
                 title={product.title}
                 image={product.variants[0].image.originalSrc}

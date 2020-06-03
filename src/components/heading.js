@@ -5,7 +5,7 @@ const heading = require('./../assets/heading.png')
 
 const Heading = ({}) => (
   <Segment basic>
-    <Image src={heading} centered={true} />
+    <Image src={heading} centered />
   </Segment>
 )
 
