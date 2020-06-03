@@ -15,10 +15,19 @@
 
 #mainHeader {
     -webkit-text-stroke: 0.15vw black;
-    font-size: 9vw;
+    //font-size: 7vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.01em;
     color: red;
     text-shadow: 0.4vw 0.4vh 0 #000000;
+    white-space: nowrap;
+}
+
+#grabProductText {
+    -webkit-text-stroke: 0.1vw black;
+    font-size: 6vh;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: -0.01em;
+    color: #FFD028;
     white-space: nowrap;
 }

@@ -12,7 +12,7 @@ const Heading = ({}) => (
     }}
   >
     <Header id="mainHeader" textAlign="center" as="h1">
-      PRINT MONSTER
+      {'PRINT MONSTER'}
     </Header>
   </Segment>
 )

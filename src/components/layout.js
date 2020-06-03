@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import { Container, Grid } from 'semantic-ui-react'
 import 'semantic-ui-less/semantic.less'
 
-import './styles.css'
+import './styles.scss'
 
 import Navbar from './navbar'
 

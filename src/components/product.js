@@ -221,23 +221,46 @@ const Product = ({ title, image, price, productId }) => {
           }
         />
 
-        <Image
-          {...hoverProps}
-          centered
-          style={{
-            visibility: isHovering ? 'visible' : 'hidden',
-            cursor: 'pointer',
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-          }}
-          src={grab}
-          onClick={() => {
-            setOpenProductModal(true)
-          }}
-        />
+        <div>
+          <Header
+            {...hoverProps}
+            id="grabProductText"
+            centered
+            style={{
+              visibility: isHovering ? 'visible' : 'hidden',
+              cursor: 'pointer',
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              marginRight: '-50%',
+              transform: 'translate(-50%, -50%)',
+              textAlign: 'center',
+              display: 'flex',
+            }}
+            onClick={() => {
+              setOpenProductModal(true)
+            }}
+            content="GRAB"
+          />
+        </div>
+
+        {/*<Image*/}
+        {/*  {...hoverProps}*/}
+        {/*  centered*/}
+        {/*  style={{*/}
+        {/*    visibility: isHovering ? 'visible' : 'hidden',*/}
+        {/*    cursor: 'pointer',*/}
+        {/*    position: 'absolute',*/}
+        {/*    top: '50%',*/}
+        {/*    left: '50%',*/}
+        {/*    marginRight: '-50%',*/}
+        {/*    transform: 'translate(-50%, -50%)',*/}
+        {/*  }}*/}
+        {/*  src={grab}*/}
+        {/*  onClick={() => {*/}
+        {/*    setOpenProductModal(true)*/}
+        {/*  }}*/}
+        {/*/>*/}
       </div>
 
       {productModal}
