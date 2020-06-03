@@ -8,6 +8,7 @@ import {
   Grid,
   Icon,
   Button,
+  Responsive,
 } from 'semantic-ui-react'
 import {
   useAddItemToCart,
@@ -221,9 +222,12 @@ const Product = ({ title, image, price, productId }) => {
           }
         />
 
-        <div>
+        <Responsive {...{ minWidth: Responsive.onlyMobile.maxWidth + 1 }}>
+          {/*Only show on screens larger than mobile*/}
+
           <Header
             {...hoverProps}
+            as={'h1'}
             id="grabProductText"
             centered
             style={{
@@ -235,32 +239,13 @@ const Product = ({ title, image, price, productId }) => {
               marginRight: '-50%',
               transform: 'translate(-50%, -50%)',
               textAlign: 'center',
-              display: 'flex',
             }}
             onClick={() => {
               setOpenProductModal(true)
             }}
             content="GRAB"
           />
-        </div>
-
-        {/*<Image*/}
-        {/*  {...hoverProps}*/}
-        {/*  centered*/}
-        {/*  style={{*/}
-        {/*    visibility: isHovering ? 'visible' : 'hidden',*/}
-        {/*    cursor: 'pointer',*/}
-        {/*    position: 'absolute',*/}
-        {/*    top: '50%',*/}
-        {/*    left: '50%',*/}
-        {/*    marginRight: '-50%',*/}
-        {/*    transform: 'translate(-50%, -50%)',*/}
-        {/*  }}*/}
-        {/*  src={grab}*/}
-        {/*  onClick={() => {*/}
-        {/*    setOpenProductModal(true)*/}
-        {/*  }}*/}
-        {/*/>*/}
+        </Responsive>
       </div>
 
       {productModal}
