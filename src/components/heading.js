@@ -1,14 +1,20 @@
 import React from 'react'
-import { Segment, Image } from 'semantic-ui-react'
-
-const heading = require('./../assets/header.svg')
+import { Segment, Header } from 'semantic-ui-react'
 
 const Heading = ({}) => (
-  <div>
-    <Segment basic>
-      <Image centered={true} src={heading} />
-    </Segment>
-  </div>
+  <Segment
+    basic
+    style={{
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <Header id="mainHeader" textAlign="center" as="h1">
+      PRINT MONSTER
+    </Header>
+  </Segment>
 )
 
 export default Heading

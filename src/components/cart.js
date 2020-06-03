@@ -86,29 +86,29 @@ function Cart({}) {
         <Menu
           size="large"
           vertical
-          style={{ marginTop: '-30px', overflow: 'auto', maxHeight: '500px' }}
+          style={{ marginTop: '-0px', overflow: 'auto', maxHeight: '500px' }}
         >
-          <div>
-            <Icon
-              onClick={() => {
-                setOpenCartMenu(false)
-              }}
-              name="close"
-              style={{ padding: '2rem', cursor: 'pointer' }}
-            />
-          </div>
           <Menu.Header>
             <Segment
               basic
               style={{
                 textAlign: 'center',
-                marginBottom: '-20px',
-                marginTop: '-20px',
               }}
             >
-              <span>
+              <div style={{ textAlign: 'right' }}>
+                <Icon
+                  onClick={() => {
+                    setOpenCartMenu(false)
+                  }}
+                  name="close"
+                  style={{
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
+              <div>
                 <h2>Your Cart</h2>
-              </span>
+              </div>
             </Segment>
           </Menu.Header>
           {cartItems.map(product => {
