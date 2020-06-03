@@ -124,17 +124,25 @@ function Cart({}) {
               <div>
                 <h2>Your Cart</h2>
               </div>
-              <Segment basic>
-                <Button
-                  onClick={() => {
-                    clearCart()
-                  }}
-                >
-                  Clear cart
-                </Button>
-              </Segment>
             </Segment>
           </Menu.Header>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <button
+              style={{
+                background: 'none',
+                float: 'left',
+                marginLeft: '-6px',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'grey',
+              }}
+              onClick={() => {
+                clearCart()
+              }}
+            >
+              Clear cart
+            </button>
+          </div>
           {cartItems.map(product => {
             return (
               <Item key={product.id}>
