@@ -142,7 +142,7 @@ const Product = ({ title, image, price, productId }) => {
                     color={isAddedToCart ? 'grey' : 'twitter'}
                     size="big"
                     loading={isAddingToCart}
-                    disabled={isAddedToCart}
+                    disabled={isAddingToCart || isAddedToCart}
                   >
                     {isAddedToCart ? (
                       <Header as="h3" content={'Added!'} />

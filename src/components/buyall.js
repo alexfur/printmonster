@@ -48,7 +48,7 @@ const BuyAll = ({ allPatternsItem }) => {
             border: '2px solid black',
           }}
           loading={isAddingToCart}
-          disabled={isAddedToCart}
+          disabled={isAddingToCart || isAddedToCart}
         >
           {isAddedToCart ? (
             <Header as="h3" content={'FULL PACK ADDED!'} />
