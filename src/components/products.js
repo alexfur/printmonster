@@ -27,12 +27,26 @@ function Products() {
     }
   `)
 
+  {
+    console.log(
+      JSON.stringify(
+        data.allShopifyProduct.nodes.filter(
+          product => product.title === 'All patterns'
+        )
+      )
+    )
+  }
+
   return (
     <div>
-      <BuyAll data={data} />
+      <BuyAll
+        allPatternsItem={data.allShopifyProduct.nodes.filter(
+          product => product.title === 'All patterns'
+        )}
+      />
       <Grid columns={3} stackable={true} padded>
         {data.allShopifyProduct.nodes.map(product => {
-          return (
+          return product.title !== 'All patterns' ? (
             <Grid.Column key={product.variants[0].shopifyId}>
               <Product
                 title={product.title}
@@ -41,6 +55,8 @@ function Products() {
                 productId={product.variants[0].shopifyId}
               />
             </Grid.Column>
+          ) : (
+            ''
           )
         })}
       </Grid>
