@@ -1,12 +1,26 @@
 import React from 'react'
-import { Segment, Image } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-const heading = require('./../assets/heading.png')
+const Heading = ({}) => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "heading.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
 
-const Heading = ({}) => (
-  <Segment basic>
-    <Image src={heading} centered />
-  </Segment>
-)
+  return (
+    <Segment basic>
+      <Img fluid={data.file.childImageSharp.fluid} />
+    </Segment>
+  )
+}
 
 export default Heading
