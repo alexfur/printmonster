@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import { Menu, Segment, Button } from 'semantic-ui-react'
 
 import Cart from './cart'
 
@@ -12,7 +12,6 @@ const Navbar = ({}) => (
     }}
   >
     <Menu
-      // fixed={'top'}
       id="cartMenu"
       borderless={true}
       style={{
