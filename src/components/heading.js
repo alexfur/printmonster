@@ -8,7 +8,7 @@ const Heading = ({}) => {
     query {
       file(relativePath: { eq: "heading.png" }) {
         childImageSharp {
-          fluid(maxWidth: 3080, quality: 100) {
+          fluid(maxWidth: 3080, quality: 60) {
             ...GatsbyImageSharpFluid
           }
         }
