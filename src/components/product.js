@@ -115,7 +115,7 @@ const Product = ({ title, image, price, productId }) => {
                     alignItems: 'center',
                   }}
                 >
-                  <h1 id="strokedP">${Math.round(price)}</h1>
+                  <h1 id="productPriceText">${Math.round(price)}</h1>
                 </Label>
               </div>
             }
@@ -215,7 +215,7 @@ const Product = ({ title, image, price, productId }) => {
                   alignItems: 'center',
                 }}
               >
-                <h1 id="strokedP">${Math.round(price)}</h1>
+                <h1 id="productPriceText">${Math.round(price)}</h1>
               </Label>
             </div>
           }
