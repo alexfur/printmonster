@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Img from 'gatsby-image'
 import {
   Image,
   Modal,

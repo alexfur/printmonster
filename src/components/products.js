@@ -3,11 +3,26 @@ import { Grid } from 'semantic-ui-react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Product from './product'
 import BuyAll from './buyall'
+import Img from 'gatsby-image'
 
 function Products() {
   const data = useStaticQuery(graphql`
     {
       allShopifyProduct(sort: { fields: [title], order: ASC }) {
+        edges {
+          node {
+            id
+            images {
+              localFile {
+                childImageSharp {
+                  fluid(maxWidth: 3080, quality: 50) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+        }
         nodes {
           title
           variants {
@@ -62,6 +77,13 @@ function Products() {
           )
         })}
       </Grid>
+      {/*{data.allShopifyProduct.edges[0].node.id}*/}
+      <Img
+        fluid={
+          data.allShopifyProduct.edges[1].node.images[0].localFile
+            .childImageSharp.fluid
+        }
+      />
     </div>
   )
 }
