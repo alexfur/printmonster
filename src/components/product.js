@@ -160,11 +160,11 @@ const Product = ({ title, image, price, productId }) => {
                   <span style={{ fontWeight: 600 }}>SVG</span> copies
                 </p>
               </Grid.Column>
-              <Grid.Column>
-                <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
-                  Size: 800KB
-                </p>
-              </Grid.Column>
+              {/*<Grid.Column>*/}
+              {/*  <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>*/}
+              {/*    Size: 800KB*/}
+              {/*  </p>*/}
+              {/*</Grid.Column>*/}
             </Grid.Row>
           </Grid>
         </Modal.Description>
