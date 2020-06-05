@@ -7,6 +7,12 @@
   box-shadow: none;
 }
 
+#productContainer {
+  -webkit-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.33);
+  -moz-box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.33);
+  box-shadow: -4px 4px 9px 0px rgba(0,0,0,0.33);
+}
+
 #productPriceText {
     -webkit-text-stroke: 0.1rem black;
     font-size: 2rem;
