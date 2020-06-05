@@ -18,6 +18,8 @@ import {
 import useHover from 'react-use-hover'
 
 const Product = ({ title, image, price, productId }) => {
+  const grab = require('./../assets/grab.png')
+
   const [isHovering, hoverProps] = useHover({
     mouseEnterDelayMS: 0,
     mouseLeaveDelayMS: 0,
@@ -180,8 +182,7 @@ const Product = ({ title, image, price, productId }) => {
         <Header as="h3" style={{ padding: '0.3rem' }}>
           {title}
         </Header>
-      </div>
-
+      </div>{' '}
       <div>
         <Image
           {...hoverProps}
@@ -215,14 +216,11 @@ const Product = ({ title, image, price, productId }) => {
             </div>
           }
         />
-
         <Responsive {...{ minWidth: Responsive.onlyMobile.maxWidth + 1 }}>
           {/*Only show on screens larger than mobile*/}
 
-          <Header
+          <Image
             {...hoverProps}
-            as={'h1'}
-            id="grabProductText"
             centered
             style={{
               visibility: isHovering ? 'visible' : 'hidden',
@@ -233,15 +231,16 @@ const Product = ({ title, image, price, productId }) => {
               marginRight: '-50%',
               transform: 'translate(-50%, -50%)',
               textAlign: 'center',
+              marginTop: '0.5rem',
+              width: '85%',
             }}
             onClick={() => {
               setOpenProductModal(true)
             }}
-            content="GRAB"
+            src={grab}
           />
         </Responsive>
       </div>
-
       {productModal}
     </div>
   )
