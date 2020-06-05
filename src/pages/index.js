@@ -10,8 +10,6 @@ const IndexPage = () => {
       <Layout>
         <Heading />
         <Products />
-        <Products />
-        <Products />
       </Layout>
     </>
   )
