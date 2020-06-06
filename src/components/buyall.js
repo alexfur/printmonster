@@ -42,7 +42,7 @@ const BuyAll = ({ allPatternsItem }) => {
           size="huge"
           style={{
             textAlign: 'center',
-            backgroundColor: '#FFD028',
+            backgroundColor: '#FFF15F',
             fontWeight: '800',
             color: 'black',
             border: '2px solid black',
