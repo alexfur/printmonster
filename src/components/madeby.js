@@ -11,7 +11,7 @@ const Madeby = ({}) => {
         textAlign={'center'}
         style={{ whiteSpace: 'no-wrap' }}
       >
-        By{' '}
+        Made by{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"

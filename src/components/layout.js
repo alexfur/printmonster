@@ -8,6 +8,7 @@ import 'semantic-ui-less/semantic.less'
 import './styles.scss'
 
 import Navbar from './navbar'
+import Madeby from './madeby'
 
 const Layout = ({ children, data }) => (
   <StaticQuery
@@ -22,24 +23,32 @@ const Layout = ({ children, data }) => (
     `}
     render={data => (
       <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'PrintMonster' },
-            {
-              name: 'keywords',
-              content: 'Illustrations, backgrounds, doodles, landing page',
-            },
-          ]}
-        />
+        <div className="Site">
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              { name: 'description', content: 'PrintMonster' },
+              {
+                name: 'keywords',
+                content: 'Illustrations, backgrounds, doodles, landing page',
+              },
+            ]}
+          />
 
-        <Navbar />
+          <main className="Site-content">
+            <Navbar />
 
-        <Grid centered stackable relaxed>
-          <Grid.Column mobile={16} tablet={16} computer={16}>
-            <Container>{children}</Container>
-          </Grid.Column>
-        </Grid>
+            <Grid centered stackable relaxed>
+              <Grid.Column mobile={16} tablet={16} computer={16}>
+                <Container>{children}</Container>
+              </Grid.Column>
+            </Grid>
+          </main>
+
+          <footer>
+            <Madeby />
+          </footer>
+        </div>
       </>
     )}
   />
