@@ -165,7 +165,7 @@ const Product = ({ title, image, price, productId }) => {
             <Grid.Row columns={2}>
               <Grid.Column>
                 <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
-                  Edit this in Figma with Shape Tools
+                  (Psst, I'm editable in Figma)
                 </p>
               </Grid.Column>
               <Grid.Column>
