@@ -22,7 +22,7 @@ module.exports = {
         short_name: `prntmnstr`,
         start_url: `/`,
         display: `standalone`,
-        icon: `./src/assets/favicon.png`,
+        icon: `./src/assets/og_image.png`,
         legacy: true, // this will not add apple-touch-icon links to <head>
       },
     },
