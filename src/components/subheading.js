@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header } from 'semantic-ui-react'
+import { Segment, Header, Responsive } from 'semantic-ui-react'
 
 const Subheading = ({}) => {
   return (
@@ -8,13 +8,13 @@ const Subheading = ({}) => {
         as={'h1'}
         size={'massive'}
         textAlign={'center'}
-        style={{ fontSize: '3rem' }}
+        style={{ fontSize: '2.5rem', whiteSpace: 'no-wrap' }}
       >
         50 patterns handmade in Figma
       </Header>
       <Header as={'h2'} textAlign={'center'}>
-        Spice up your next landing page, blog post or newsletter • Open and edit
-        any pattern in Figma
+        Spice up your next landing page / blog post / newsletter with totally
+        editable vector patterns
       </Header>
     </Segment>
   )
