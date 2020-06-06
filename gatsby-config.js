@@ -13,23 +13,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Print Monster`,
-        short_name: `Print Monster`,
-        start_url: `/`,
-        display: `standalone`,
-        icon: `./src/assets/favicon.png`, // This path is relative to the root of the site.
-        icons: [
-          {
-            src: `./src/assets/android-chrome-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `./src/assets/android-chrome-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        // name: `PrintMonster`,
+        // short_name: `PrintMonster`,
+        // start_url: `/`,
+        // display: `standalone`,
+        // icon: `../src/assets/favicon.png`, // This path is relative to the root of the site.
+        // icons: [
+        //   {
+        //     src: `../src/assets/android-chrome-192x192.png`,
+        //     sizes: `192x192`,
+        //     type: `image/png`,
+        //   },
+        //   {
+        //     src: `../src/assets/android-chrome-512x512.png`,
+        //     sizes: `512x512`,
+        //     type: `image/png`,
+        //   },
+        // ],
       },
     },
     {

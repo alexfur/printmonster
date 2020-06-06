@@ -4,12 +4,7 @@ import { Segment, Header } from 'semantic-ui-react'
 const Madeby = ({}) => {
   return (
     <Segment basic>
-      <Header
-        as={'h3'}
-        size={'massive'}
-        textAlign={'center'}
-        style={{ whiteSpace: 'no-wrap' }}
-      >
+      <Header as={'h3'} textAlign={'center'} style={{ whiteSpace: 'no-wrap' }}>
         Made by{' '}
         <a
           target="_blank"

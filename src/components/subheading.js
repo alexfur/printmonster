@@ -6,15 +6,11 @@ const Subheading = ({}) => {
     <Segment basic>
       <Header
         as={'h1'}
-        size={'massive'}
         textAlign={'center'}
-        style={{ fontSize: '2.5rem', whiteSpace: 'no-wrap' }}
+        style={{ fontSize: '2rem', whiteSpace: 'no-wrap' }}
       >
-        50 patterns handmade in Figma
-      </Header>
-      <Header as={'h2'} textAlign={'center'}>
-        Spice up your next landing page / blog post / newsletter with fully
-        editable vector patterns
+        Spice up your next project with 50 fully editable vector patterns
+        handmade in Figma.
       </Header>
     </Segment>
   )
