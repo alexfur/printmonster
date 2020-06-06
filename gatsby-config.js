@@ -7,7 +7,7 @@ module.exports = {
     titleTemplate: 'PrintMonster',
     description: 'Vector patterns made in Figma.',
     url: 'https://figmapatterns.netlify.app',
-    image: '/favicon.png', // Path to your image you placed in the 'static' folder
+    image: '/og_image.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@alex_furm',
   },
   plugins: [
@@ -22,7 +22,7 @@ module.exports = {
         short_name: `prntmnstr`,
         start_url: `/`,
         display: `standalone`,
-        icon: `./src/assets/og_image.png`,
+        icon: `./src/assets/favicon.png`,
         legacy: true, // this will not add apple-touch-icon links to <head>
       },
     },
