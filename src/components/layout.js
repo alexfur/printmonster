@@ -26,6 +26,7 @@ const Layout = ({ children, data }) => (
         <div className="Site">
           <Helmet
             title={data.site.siteMetadata.title}
+            link={{ rel: 'apple-touch-icon', href: '%PUBLIC_URL%/logo192.png' }}
             meta={[
               { name: 'description', content: 'PrintMonster' },
               {
