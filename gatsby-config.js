@@ -18,7 +18,7 @@ module.exports = {
         short_name: `PrintMonster`,
         start_url: `/`,
         display: `standalone`,
-        icon: `src/assets/favicon1.png`,
+        icon: `src/assets/favicon.png`,
         legacy: true, // this will not add apple-touch-icon links to <head>
       },
     },

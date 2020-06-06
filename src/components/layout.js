@@ -24,20 +24,13 @@ const Layout = ({ children, data }) => (
     render={data => (
       <>
         <div className="Site">
-          <Helmet
-            title={data.site.siteMetadata.title}
-            link={{ rel: 'apple-touch-icon', href: '%PUBLIC_URL%/logo192.png' }}
-            meta={[
-              { name: 'description', content: 'PrintMonster' },
-              {
-                name: 'keywords',
-                content:
-                  'illustrations, backgrounds, landing page, newsletter, vector, figma',
-              },
-            ]}
-          />
-
           <main className="Site-content">
+            <Helmet>
+              <html lang="en" />
+              <title>{data.site.siteMetadata.title}</title>
+              <description>{data.site.siteMetadata.description}</description>
+            </Helmet>
+
             <Navbar />
 
             <Grid centered stackable relaxed>
