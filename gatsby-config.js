@@ -11,6 +11,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/assets/favicon1.png`,
+        legacy: true, // this will not add apple-touch-icon links to <head>
+      },
+    },
+    {
       resolve: `gatsby-plugin-favicon`,
       options: {
         logo: './src/assets/favicon1.png',
