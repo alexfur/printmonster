@@ -131,7 +131,13 @@ const Product = ({ title, image, price, productId }) => {
               <Segment basic />
             </Grid.Row>
             <Grid.Row columns={2}>
-              <Grid.Column>
+              <Grid.Column
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
                 <Header as="h1" textAlign="center">
                   {title}
                 </Header>
@@ -159,8 +165,14 @@ const Product = ({ title, image, price, productId }) => {
             <Grid.Row columns={2}>
               <Grid.Column>
                 <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
-                  Includes <span style={{ fontWeight: 600 }}>FIG</span> and{' '}
-                  <span style={{ fontWeight: 600 }}>SVG</span> copies
+                  Edit this in Figma with Shape Tools
+                </p>
+              </Grid.Column>
+              <Grid.Column>
+                <p style={{ fontSize: '1.2rem', textAlign: 'center' }}>
+                  Includes <span style={{ fontWeight: 600 }}>FIG</span>,{' '}
+                  <span style={{ fontWeight: 600 }}>SVG</span> and{' '}
+                  <span style={{ fontWeight: 600 }}>PNG</span> copies
                 </p>
               </Grid.Column>
             </Grid.Row>
@@ -180,7 +192,12 @@ const Product = ({ title, image, price, productId }) => {
           borderBottom: 0,
         }}
       >
-        <Header as="h3" style={{ padding: '0.3rem' }}>
+        <Header
+          as="h3"
+          style={{
+            padding: '0.3rem',
+          }}
+        >
           {title}
         </Header>
       </div>{' '}
