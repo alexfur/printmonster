@@ -3,8 +3,12 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: 'Print Monster',
-    description: 'Vector patterns handmade in Figma',
+    title: 'PrintMonster',
+    titleTemplate: 'PrintMonster',
+    description: 'Vector patterns made in Figma.',
+    url: 'https://figmapatterns.netlify.app',
+    image: '/favicon.png', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@alex_furm',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -15,7 +19,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `PrintMonster`,
-        short_name: `PrintMonster`,
+        short_name: `prntmnstr`,
         start_url: `/`,
         display: `standalone`,
         icon: `src/assets/favicon.png`,

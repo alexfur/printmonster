@@ -9,6 +9,7 @@ import './styles.scss'
 
 import Navbar from './navbar'
 import Madeby from './madeby'
+import SEO from './seo'
 
 const Layout = ({ children, data }) => (
   <StaticQuery
@@ -25,11 +26,12 @@ const Layout = ({ children, data }) => (
       <>
         <div className="Site">
           <main className="Site-content">
-            <Helmet>
-              <html lang="en" />
-              <title>{data.site.siteMetadata.title}</title>
-              <description>{data.site.siteMetadata.description}</description>
-            </Helmet>
+            <SEO />
+            {/*<Helmet>*/}
+            {/*  <html lang="en" />*/}
+            {/*  <title>{data.site.siteMetadata.title}</title>*/}
+            {/*  <description>{data.site.siteMetadata.description}</description>*/}
+            {/*</Helmet>*/}
 
             <Navbar />
 
