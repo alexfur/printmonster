@@ -45,7 +45,7 @@ const Layout = ({ children, data }) => (
             </Grid>
           </main>
 
-          <footer>
+          <footer style={{ paddingBottom: '1rem', paddingTop: '3rem' }}>
             <Madeby />
           </footer>
         </div>

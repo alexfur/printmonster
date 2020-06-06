@@ -5,7 +5,7 @@ const Madeby = ({}) => {
   return (
     <Segment basic>
       <Header
-        as={'h1'}
+        as={'h3'}
         size={'massive'}
         textAlign={'center'}
         style={{ whiteSpace: 'no-wrap' }}
