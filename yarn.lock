@@ -11835,6 +11835,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-mailto@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-mailto/-/react-mailto-0.4.0.tgz#2229cb60fca3552273f82e4de96c83f2d12c0d5f"
+  integrity sha1-IinLYPyjVSJz+C5N6WyD8tEsDV8=
+
 react-reconciler@^0.24.0:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/react-reconciler/-/react-reconciler-0.24.0.tgz#5a396b2c2f5efe8554134a5935f49f546723f2dd"
@@ -11891,6 +11896,11 @@ react@^16.4.1, react@^16.8.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
+
+reactv16-mailto@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/reactv16-mailto/-/reactv16-mailto-0.4.4.tgz#b0eed6c57e9aa67b4201f364082228ce5b8d3b3b"
+  integrity sha512-c3EW8hdRPPhPHrdV+41LwTdKRqBCoah+6D7zjmgZRlYuZk47NJfhbPNhxBt9gYiyBk5foU3uFZRutO9PHhtB2Q==
 
 read-chunk@^1.0.1:
   version "1.0.1"

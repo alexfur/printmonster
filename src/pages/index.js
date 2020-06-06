@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Heading from '../components/heading'
 import Products from '../components/products'
 import Subheading from '../components/subheading'
+import Madeby from '../components/madeby'
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
         <Heading />
         <Subheading />
         <Products />
+        <Madeby />
       </Layout>
     </>
   )
