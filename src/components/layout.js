@@ -30,7 +30,8 @@ const Layout = ({ children, data }) => (
               { name: 'description', content: 'PrintMonster' },
               {
                 name: 'keywords',
-                content: 'Illustrations, backgrounds, doodles, landing page',
+                content:
+                  'illustrations, backgrounds, landing page, newsletter, vector, figma',
               },
             ]}
           />

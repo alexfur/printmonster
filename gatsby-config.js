@@ -11,6 +11,28 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Print Monster`,
+        short_name: `Print Monster`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `./src/assets/icon.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `./src/assets/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `./src/assets/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sharp`,
       options: {
         useMozJpeg: false,
@@ -22,23 +44,6 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `./src/assets/`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-favicon`,
-      options: {
-        logo: './src/assets/favicon.png',
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          yandex: false,
-          windows: false,
-        },
       },
     },
     {
