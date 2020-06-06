@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Alex Furman",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
     "dotenv": "^8.2.0",
     "gatsby": "next",
     "gatsby-image": "^2.4.5",
@@ -13,7 +12,6 @@
     "gatsby-plugin-react-helmet": "next",
     "gatsby-plugin-sass": "^2.3.3",
     "gatsby-plugin-sharp": "^2.6.9",
-    "gatsby-plugin-styled-components": "^3.3.2",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-source-shopify": "^3.2.3",
     "gatsby-theme-shopify-manager": "^0.1.7",
@@ -22,18 +20,11 @@
     "node-sass": "^4.14.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-fittext": "^1.0.0",
     "react-helmet": "^5.2.0",
-    "react-json-pretty": "^2.2.0",
-    "react-mailto": "^0.4.0",
-    "react-textfit": "^1.1.0",
     "react-use-hover": "^1.0.0",
-    "reactv16-mailto": "^0.4.4",
     "semantic-ui-less": "^2.3.3",
     "semantic-ui-react": "^0.82.1",
-    "shopify-buy": "^2.10.0",
-    "styled-components": "^5.1.1",
-    "use-fit-text": "^2.1.3"
+    "shopify-buy": "^2.10.0"
   },
   "keywords": [
     "gatsby"

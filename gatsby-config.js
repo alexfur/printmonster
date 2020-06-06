@@ -50,8 +50,5 @@ module.exports = {
         shouldWrapRootElementWithProvider: true, // default
       },
     },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
   ],
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Segment, Header } from 'semantic-ui-react'
-import Mailto from 'reactv16-mailto'
 
 const Madeby = ({}) => {
   return (

@@ -13,7 +13,7 @@ const Subheading = ({}) => {
         50 patterns handmade in Figma
       </Header>
       <Header as={'h2'} textAlign={'center'}>
-        Spice up your next landing page / blog post / newsletter with totally
+        Spice up your next landing page / blog post / newsletter with fully
         editable vector patterns
       </Header>
     </Segment>
