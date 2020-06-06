@@ -17,7 +17,7 @@ module.exports = {
         short_name: `Print Monster`,
         start_url: `/`,
         display: `standalone`,
-        icon: `./src/assets/icon.png`, // This path is relative to the root of the site.
+        icon: `./src/assets/favicon.png`, // This path is relative to the root of the site.
         icons: [
           {
             src: `./src/assets/android-chrome-192x192.png`,
