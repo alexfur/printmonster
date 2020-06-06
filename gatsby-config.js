@@ -3,7 +3,7 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: 'PrintMonster',
+    title: 'Print Monster',
     titleTemplate: 'PrintMonster',
     description: 'Vector patterns made in Figma.',
     url: 'https://figmapatterns.netlify.app',
@@ -22,7 +22,7 @@ module.exports = {
         short_name: `prntmnstr`,
         start_url: `/`,
         display: `standalone`,
-        icon: `src/assets/favicon.png`,
+        icon: `/favicon.png`,
         legacy: true, // this will not add apple-touch-icon links to <head>
       },
     },
