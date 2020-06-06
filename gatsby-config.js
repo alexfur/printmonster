@@ -11,25 +11,30 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-favicon`,
       options: {
-        // name: `PrintMonster`,
-        // short_name: `PrintMonster`,
-        // start_url: `/`,
-        // display: `standalone`,
-        // icon: `../src/assets/favicon.png`, // This path is relative to the root of the site.
-        // icons: [
-        //   {
-        //     src: `../src/assets/android-chrome-192x192.png`,
-        //     sizes: `192x192`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `../src/assets/android-chrome-512x512.png`,
-        //     sizes: `512x512`,
-        //     type: `image/png`,
-        //   },
-        // ],
+        logo: './src/assets/favicon1.png',
+        // WebApp Manifest Configuration
+        appName: null, // Inferred with your package.json
+        appDescription: '50 patterns handmade in Figma',
+        developerName: null,
+        developerURL: null,
+        dir: 'auto',
+        lang: 'en-US',
+        display: 'standalone',
+        orientation: 'any',
+        start_url: '/',
+        version: '1.0',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          yandex: true,
+          windows: true,
+        },
       },
     },
     {

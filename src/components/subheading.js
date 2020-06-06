@@ -1,5 +1,5 @@
 import React from 'react'
-import { Segment, Header, Responsive } from 'semantic-ui-react'
+import { Segment, Header } from 'semantic-ui-react'
 
 const Subheading = ({}) => {
   return (
