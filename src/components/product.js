@@ -201,12 +201,20 @@ const Product = ({ title, image, price, productId }) => {
           {title}
         </Header>
       </div>{' '}
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          border: '2px solid black',
+          backgroundColor: 'white',
+        }}
+      >
         <Image
           {...hoverProps}
           style={{
             backgroundColor: 'white',
-            border: '2px solid black',
             cursor: 'pointer',
           }}
           onClick={() => {
