@@ -32,13 +32,13 @@ function Products() {
       {/*Return buy button for the 'All patterns' product*/}
       <BuyAll
         allPatternsItem={data.allShopifyProduct.nodes.filter(
-          product => product.title === 'All patterns'
+          product => product.title.toLowerCase() === 'all patterns'
         )}
       />
       {/*Return product grid of all products except the 'All patterns' product*/}
       <Grid columns={3} stackable={true} padded>
         {data.allShopifyProduct.nodes.map(product => {
-          return product.title !== 'All patterns' ? (
+          return product.title.toLowerCase() !== 'all patterns' ? (
             <Grid.Column key={product.variants[0].shopifyId}>
               <Product
                 title={product.title}
