@@ -9,6 +9,7 @@ import './styles.scss'
 import Navbar from './navbar'
 import Madeby from './madeby'
 import SEO from './seo'
+import Licence from './licence'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -36,6 +37,7 @@ const Layout = ({ children }) => (
           </main>
 
           <footer style={{ paddingBottom: '1rem', paddingTop: '3rem' }}>
+            <Licence />
             <Madeby />
           </footer>
         </div>

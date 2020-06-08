@@ -19,6 +19,8 @@
     "gatsby-source-shopify": "^3.2.3",
     "gatsby-theme-shopify-manager": "^0.1.7",
     "gatsby-transformer-sharp": "^2.5.3",
+    "html-react-parser": "^0.13.0",
+    "html-to-react": "^1.4.3",
     "less": "^3.8.1",
     "node-sass": "^4.14.1",
     "react": "^16.4.1",
