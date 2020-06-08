@@ -53,7 +53,7 @@ const BuyAll = ({ allPatternsItem }) => {
           {isAddedToCart ? (
             <Header as="h3" content={'FULL PACK ADDED!'} />
           ) : (
-            'GRAB ALL FOR $30!'
+            'GRAB ALL PATTERNS FOR $30!'
           )}
         </Button>
       </Segment>

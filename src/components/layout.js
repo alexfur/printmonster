@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Container, Grid } from 'semantic-ui-react'
 import 'semantic-ui-less/semantic.less'
@@ -11,7 +10,7 @@ import Navbar from './navbar'
 import Madeby from './madeby'
 import SEO from './seo'
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -27,12 +26,6 @@ const Layout = ({ children, data }) => (
         <div className="Site">
           <main className="Site-content">
             <SEO />
-            {/*<Helmet>*/}
-            {/*  <html lang="en" />*/}
-            {/*  <title>{data.site.siteMetadata.title}</title>*/}
-            {/*  <description>{data.site.siteMetadata.description}</description>*/}
-            {/*</Helmet>*/}
-
             <Navbar />
 
             <Grid centered stackable relaxed>

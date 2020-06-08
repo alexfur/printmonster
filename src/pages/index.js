@@ -4,12 +4,15 @@ import Layout from '../components/layout'
 import Heading from '../components/heading'
 import Products from '../components/products'
 import Subheading from '../components/subheading'
+import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
     <>
       <Layout>
-        <Heading />
+        <Link to={'/'}>
+          <Heading />
+        </Link>
         <Subheading />
         <Products />
       </Layout>

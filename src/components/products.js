@@ -1,10 +1,10 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
-import { useStaticQuery, graphql } from 'gatsby'
 import Product from './product'
 import BuyAll from './buyall'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function Products() {
+const Products = () => {
   const data = useStaticQuery(graphql`
     {
       allShopifyProduct(sort: { fields: [createdAt], order: ASC }) {
@@ -26,7 +26,6 @@ function Products() {
       }
     }
   `)
-
   return (
     <div>
       {/*Return buy button for the 'All patterns' product*/}
