@@ -103,9 +103,6 @@ const Product = ({ title, image, price, productId }) => {
             size="large"
             style={{
               border: '2px solid black',
-              display: 'flex',
-              justifyContent: 'center',
-              textAlign: 'center',
             }}
             label={
               <div>
