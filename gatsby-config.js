@@ -49,5 +49,11 @@ module.exports = {
         shouldWrapRootElementWithProvider: true, // default
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-168852391-1',
+      },
+    },
   ],
 }
