@@ -6,7 +6,7 @@ module.exports = {
     title: 'Print Monster',
     titleTemplate: 'PrintMonster',
     description: 'Vector patterns made in Figma.',
-    url: 'https://figmapatterns.netlify.app',
+    url: 'https://printmonster.xyz',
     image: '/og_image.png', // Path to your image you placed in the 'static' folder
     twitterUsername: '@alex_furm',
   },

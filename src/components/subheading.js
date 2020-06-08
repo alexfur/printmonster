@@ -9,8 +9,7 @@ const Subheading = ({}) => {
         textAlign={'center'}
         style={{ fontSize: '2rem', whiteSpace: 'no-wrap' }}
       >
-        Spice up your next project with 50 fully editable vector patterns
-        handmade in Figma.
+        50 customizable patterns for your next project - made in Figma.
       </Header>
     </Segment>
   )
