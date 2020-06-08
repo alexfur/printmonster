@@ -13,7 +13,9 @@ const IndexPage = () => {
         <Link to={'/'}>
           <Heading />
         </Link>
-        <Subheading />
+        <div>
+          <Subheading />
+        </div>
         <Products />
       </Layout>
     </>

@@ -34,6 +34,7 @@ const Products = () => {
           product => product.title.toLowerCase() === 'all patterns'
         )}
       />
+
       {/*Return product grid of all products except the 'All patterns' product*/}
       <Grid columns={3} stackable={true} padded>
         {data.allShopifyProduct.nodes.map(product => {
