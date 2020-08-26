@@ -1,8 +1,8 @@
-## PrintMonster
+# PrintMonster
 PrintMonster is an e-commerce store for a set of digital vectors drawn in Figma. 
 It's built with Gatsby.js as a frontend for Shopify Lite, with GraphQL for handling API calls and Semantic UI for styling of components.
 
-## How to run
+### How to run
 **NOTE: This is intended for use with Gatsby 2.0.0 and above.**
 
 Make sure that you have the Gatsby CLI program installed  
